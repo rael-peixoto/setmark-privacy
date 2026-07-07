@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setmark — Workout tracking that stays out of your way</title>
+<meta name="description" content="Setmark is an offline workout tracker: log sets, follow routines, and see real progress with a consistency calendar and per-exercise volume charts. No account, no ads, no cloud." />
+<link rel="icon" href="assets/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #121212;
+    --card: #1c1c1c;
+    --border: #2e2e2e;
+    --fg: #f2f2f2;
+    --muted: #8c8c8c;
+    --primary: #1886f9;
+    --primary-ink: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--primary); }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero */
+  header.hero {
+    padding: 4.5rem 0 3.5rem;
+    text-align: center;
+  }
+  .logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    margin-bottom: 1.5rem;
+  }
+  h1.wordmark {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+  }
+  .tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--muted);
+    max-width: 34rem;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+  }
+  .badge .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  /* Features */
+  section.features {
+    padding: 2rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .feature.reverse .feature-text { order: 2; }
+  .feature.reverse .feature-shot { order: 1; }
+  .feature-text .eyebrow {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .feature-text h2 {
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.85rem;
+  }
+  .feature-text p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .feature-shot {
+    display: flex;
+    justify-content: center;
+  }
+  .feature-shot img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 60px -30px rgba(24, 134, 249, 0.35);
+  }
+
+  @media (max-width: 720px) {
+    .feature, .feature.reverse {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      text-align: center;
+    }
+    .feature.reverse .feature-text,
+    .feature.reverse .feature-shot,
+    .feature-text, .feature-shot { order: initial; }
+    .feature-shot img { max-width: 220px; }
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0 3rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  footer a { color: var(--fg); text-decoration: none; font-weight: 600; }
+  footer a:hover { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="logo" src="assets/icon.png" alt="Setmark app icon" />
+    <h1 class="wordmark">Setmark</h1>
+    <p class="tagline">
+      Workout tracking that stays out of your way. Log sets, follow routines,
+      and see real progress — entirely offline, with no account and nothing
+      to configure.
+    </p>
+    <span class="badge"><span class="dot"></span> Coming soon on the App Store</span>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-text">
+        <div class="eyebrow">Library</div>
+        <h2>51 exercises, ready on day one</h2>
+        <p>
+          Every default exercise ships with form cues and muscle tags, in
+          English and Portuguese. Add your own, clone and tweak an existing
+          one, or mark exercises as interchangeable so a busy gym never stalls
+          a workout.
+        </p>
+      </div>
+      <div class="feature-shot">
+        <img src="assets/screenshot-library.png" alt="Setmark exercise library screen" />
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-text">
+        <div class="eyebrow">Workout</div>
+        <h2>Built for the middle of a set</h2>
+        <p>
+          Big tap targets for logging weight and reps, drop sets in one tap,
+          a rest timer with sound and vibration, and instant exercise swaps
+          when the equipment you planned is taken.
+        </p>
+      </div>
+      <div class="feature-shot">
+        <img src="assets/screenshot-workout.png" alt="Setmark active workout screen" />
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <div class="eyebrow">Stats</div>
+        <h2>See the trend, not just the number</h2>
+        <p>
+          A GitHub-style consistency calendar and a per-exercise volume chart
+          turn months of logged history into something you can actually read
+          at a glance — no spreadsheet required.
+        </p>
+      </div>
+      <div class="feature-shot">
+        <img src="assets/screenshot-stats.png" alt="Setmark stats and progress screen" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="index.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:raelmarchantpeixoto@gmail.com">Contact</a>
+    </div>
+    <div>Setmark is developed independently by Rael Peixoto.</div>
+  </footer>
+</div>
+
+</body>
+</html>
